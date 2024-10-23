@@ -11,16 +11,36 @@
     "lint:fix": "eslint --fix --ext .js,.vue ."
   },
   "dependencies": {
-    "dotenv": "^16.4.5",
-    "vue": "^3.2.41"
+    "vue": "^3.2.41",
+    "vue-router": "^4.2.5",
+    "pinia": "^2.1.6",
+    "dayjs": "^1.11.10",
+    "axios": "^1.5.1",
+    "naive-ui": "^2.35.0"
+  },
+  "eslintConfig": {
+    "extends": [
+      "@unocss"
+    ]
   },
   "devDependencies": {
+    "dotenv": "^16.4.5",
     "@vitejs/plugin-vue": "^3.2.0",
     "vite": "^3.2.3",
     "eslint": "^8.40.0",
+    "@unocss/eslint-config": "^0.55.7",
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-vue": "^9.11.0",
-    "prettier": "^2.8.8"
+    "prettier": "^2.8.8",
+    "sass": "^1.69.0",
+    "unocss": "0.55.3",
+    "unplugin-auto-import": "^0.16.6",
+    "unplugin-icons": "^0.16.6",
+    "unplugin-vue-components": "^0.25.2",
+    "vite-plugin-compression": "^0.5.1",
+    "vite-plugin-html": "^3.2.0",
+    "vite-plugin-mock": "2.9.6",
+    "vite-plugin-svg-icons": "^2.0.1"
   }
 }
