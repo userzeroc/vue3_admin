@@ -3,8 +3,7 @@ import vue from '@vitejs/plugin-vue'
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 import { NaiveUiResolver } from 'unplugin-vue-components/resolvers'
-
-
+import Unocss from 'unocss/vite'
 
 import path from 'path'
 
@@ -17,13 +16,12 @@ export default defineConfig(({ command, mode }) => {
     base: VITE_PUBLIC_PATH || '/',
     plugins: [
       vue(),
+      Unocss(),
       AutoImport({
         imports: ['vue', 'vue-router'],
       }),
       Components({
-        resolvers: [
-          NaiveUiResolver(),
-        ],
+        resolvers: [NaiveUiResolver()],
         dts: false,
       }),
     ],
