@@ -5,13 +5,10 @@ import HelloWorld from './components/HelloWorld.vue'
 </script>
 
 <template>
-  
-  <RouterLink to="/login">Go to Login</RouterLink>
-  
-  <RouterLink to="/">Go to Work</RouterLink>
+  <!-- <RouterLink to="/login">Go to Login</RouterLink> -->
+
+  <!-- <RouterLink to="/">Go to Work</RouterLink> -->
   <router-view></router-view>
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>
