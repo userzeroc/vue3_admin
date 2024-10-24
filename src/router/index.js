@@ -3,13 +3,15 @@ import { baseRoutes } from './routes'
 
 
 
-// 创建路由器
+// 创建路由器(基本路由)
 const router = createRouter({
   history: createWebHistory('/'),
-  baseRoutes,
+  routes:baseRoutes,
 })
 
 // 封装路由器方法
 export async function setupRouter(app) {
   app.use(router)
 }
+
+// 添加动态路由（根据token）
