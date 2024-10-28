@@ -1,5 +1,5 @@
 <template>
-  <n-layout has-sider style="height: 100%">
+  <n-layout has-sider wh-full>
     <n-layout-sider bordered collapse-mode="width" :collapsed-width="64" :width="220">
       <Sidebar />
     </n-layout-sider>
