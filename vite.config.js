@@ -4,7 +4,9 @@ import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 import { NaiveUiResolver } from 'unplugin-vue-components/resolvers'
 import Unocss from 'unocss/vite'
-
+import IconsResolver from 'unplugin-icons/resolver' //图标引入
+import Icons from 'unplugin-icons/vite' //图标集
+import { createSvgIconsPlugin } from 'vite-plugin-svg-icons' // 雪碧图
 import path from 'path'
 
 // https://vitejs.dev/config/
@@ -17,12 +19,21 @@ export default defineConfig(({ command, mode }) => {
     plugins: [
       vue(),
       Unocss(),
+      Icons({ autoInstall: true }),
       AutoImport({
         imports: ['vue', 'vue-router'],
       }),
       Components({
-        resolvers: [NaiveUiResolver()],
+        resolvers: [NaiveUiResolver(), IconsResolver({ componentPrefix: 'icon' })],
         dts: false,
+      }),
+      createSvgIconsPlugin({
+        // 指定需要缓存的图标文件夹
+        iconDirs: [path.resolve(process.cwd(), 'src/assets/icons')],
+        // 指定symbolId格式
+        symbolId: 'icon-[dir]-[name]',
+        inject: 'body-last',
+        customDomId: '__svg__icons__dom__',
       }),
     ],
     resolve: {
