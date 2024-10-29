@@ -65,10 +65,13 @@
 
 <script setup>
 import bgImg from '@/assets/images/login_bg.webp'
+const router = useRouter()
 const loginInfo = ref({
   name: '',
   password: '',
 })
 const loading = ref(false)
-async function handleLogin() {}
+async function handleLogin() {
+  router.push('/')
+}
 </script>
